@@ -118,20 +118,3 @@ def task_4():
     # value_counts() already sorts most common first
     counts = df_bellevue['profession'].value_counts()
     return list(counts.head(5).index)
-
-from IPython.display import display
-
-# a list of the functions themselves, so we can loop over them
-# instead of typing four near-identical lines.
-tasks = [task_1, task_2, task_3, task_4]
-
-for number, task in enumerate(tasks, start=1):
-    print("=" * 60)
-    print(f"TASK {number}: {task.__doc__}")
-    print("=" * 60)
-
-    result = task()
-
-    print(f"\nReturned a {type(result).__name__}:")
-    display(result)
-    print()
