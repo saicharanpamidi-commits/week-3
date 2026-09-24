@@ -12,6 +12,19 @@ URL = ("https://raw.githubusercontent.com/melaniewalsh/"
 df_bellevue = pd.read_csv(URL)
 
 
+# Exercise 1
+def fibonacci(n):
+    """Return the nth number of the Fibonacci series."""
+
+    # base case: fibonacci(0) is 0, fibonacci(1) is 1
+    if n < 2:
+        return n
+
+    # no print in here. this calls itself thousands of times and
+    # would flood the screen.
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
 def to_binary(n):
     """Return the binary representation of an integer."""
 
@@ -22,19 +35,6 @@ def to_binary(n):
     # n // 2 chops off the last binary digit, and n % 2 is that
     # digit. glue the digit onto the end of the front part.
     return to_binary(n // 2) + str(n % 2)
-
-
-# Exercise 2
-def to_binary(n):
-    """Return the binary representation of an integer."""
-
-    # 0 and 1 are already binary
-    if n < 2:
-        return n
-
-    # n % 2 is the last binary digit and n // 2 is everything before
-    # it. multiply the front part by 10 to make room for that digit.
-    return to_binary(n // 2) * 10 + n % 2
 
 
 # Exercise 3
